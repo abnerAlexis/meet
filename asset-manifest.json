@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/abnerAlexis/meet.git/static/css/main.f855e6bc.css",
-    "main.js": "/abnerAlexis/meet.git/static/js/main.3fdfac66.js",
-    "static/js/453.4a9980c6.chunk.js": "/abnerAlexis/meet.git/static/js/453.4a9980c6.chunk.js",
-    "service-worker.js": "/abnerAlexis/meet.git/service-worker.js",
-    "static/media/logo.svg": "/abnerAlexis/meet.git/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
-    "index.html": "/abnerAlexis/meet.git/index.html",
-    "main.f855e6bc.css.map": "/abnerAlexis/meet.git/static/css/main.f855e6bc.css.map",
-    "main.3fdfac66.js.map": "/abnerAlexis/meet.git/static/js/main.3fdfac66.js.map",
-    "453.4a9980c6.chunk.js.map": "/abnerAlexis/meet.git/static/js/453.4a9980c6.chunk.js.map"
+    "main.css": "/meet/static/css/main.f855e6bc.css",
+    "main.js": "/meet/static/js/main.d589a18a.js",
+    "static/js/453.4a9980c6.chunk.js": "/meet/static/js/453.4a9980c6.chunk.js",
+    "service-worker.js": "/meet/service-worker.js",
+    "static/media/logo.svg": "/meet/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
+    "index.html": "/meet/index.html",
+    "main.f855e6bc.css.map": "/meet/static/css/main.f855e6bc.css.map",
+    "main.d589a18a.js.map": "/meet/static/js/main.d589a18a.js.map",
+    "453.4a9980c6.chunk.js.map": "/meet/static/js/453.4a9980c6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.3fdfac66.js"
+    "static/js/main.d589a18a.js"
   ]
 }
