@@ -97,3 +97,12 @@ So that I can quickly grasp trends, patterns, or statistics related to event.
   <strong>Given</strong> the user is viewing event details<br>
   <strong>When</strong> the user selects the option to view a chart<br>
   <strong>Then</strong> a chart representing relevant event details should be displayed
+
+### Using Serverless Functions
+  Logic for using serverless functions will be implemented. These functions will handle obtaining access tokens for interacting with the Google Calendar API. 
+  
+  The OAuth process involves obtaining a consumer key and secret to authenticate the serverless function. 
+  
+  When a user grants consent, an access token is generated, allowing the app to fetch and display calendar events. 
+  
+  This token is sent with each request, verifying the user's identity to the API.
