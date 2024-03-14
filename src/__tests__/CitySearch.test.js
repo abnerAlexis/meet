@@ -4,6 +4,7 @@ import CitySearch from "../components/CitySearch";
 
 describe('<CitySearch /> component', () => {
     let CitySearchComponent;
+    let suggestionList;
 
     beforeEach(() => {
         CitySearchComponent = render(<CitySearch />);
@@ -16,7 +17,7 @@ describe('<CitySearch /> component', () => {
     });
 
     test('suggestions list is hidden by default', () => {
-        const suggestionList = CitySearchComponent.queryByRole('list');
+        suggestionList = CitySearchComponent.queryByRole('list');
         expect(suggestionList).not.toBeInTheDocument();
     });
 
@@ -24,7 +25,7 @@ describe('<CitySearch /> component', () => {
         const user = userEvent.setup();
         const cityTextBox = CitySearchComponent.queryByRole('textbox');
         await user.click(cityTextBox);
-        const suggestionList = CitySearchComponent.queryByRole('list');
+        suggestionList = CitySearchComponent.queryByRole('list');
         expect(suggestionList).toBeInTheDocument();
         expect(suggestionList).toHaveClass('suggestions');
     });
