@@ -1,6 +1,7 @@
-import { render } from "@testing-library/react";
+import { render} from "@testing-library/react";
 import Event from "../components/Event";
 import { getEvents } from "../api";
+import userEvent from "@testing-library/user-event";
 
 describe('<Event /> component', () => {
     let EventComponent;
@@ -20,4 +21,35 @@ describe('<Event /> component', () => {
         const eventLocation = EventComponent.queryByText(allEvents[0].location);
         expect(eventLocation).toBeInTheDocument();
     });
+
+    test('renders event details button with the "Show Details"', () => {
+        const eventLocation = EventComponent.queryByText('Show Details');
+        expect(eventLocation).toBeInTheDocument();
+    });
+
+    test('by default event details section should be hidden', () => {
+        
+    })
+
+    test('shows details section when the user clicks "Show Details" button', async() => {
+        const user = userEvent.setup();
+
+    })
+
+    test('hides details section when the user clicks "Hide Details" button', async() => {
+        const user = userEvent.setup();
+    })
+
+    test('renders event start date', async () => {
+        const eventDate = allEvents[0].created.split('T')[0];
+        const renderedDate = EventComponent.container.querySelector('.eventdate');
+        expect((renderedDate.textContent)).toEqual("Date: " + eventDate);
+    });
+
+    test('renders event start time', async () => {
+        const eventTime = allEvents[0].created.split('T')[1];
+        const renderedTime = EventComponent.container.querySelector('.eventtime');
+        expect(renderedTime.textContent).toEqual("Time: " + eventTime);
+    });
+    
 })
