@@ -24,4 +24,10 @@ describe('<NumberOfEvents /> component', () => {
         await user.type(textBox, '{backspace}{backspace}10');
         expect(await textBox.value).toBe('10');
     });
+
+    test('renders number of events that is entered by user', async () => {
+        const textBox = NumberOfEventsComponent.queryByRole('numberofevents');
+        await user.type(textBox, '{backspace}{backspace}50');
+        expect(await textBox.value).toBe('32');
+    });
 });

@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 
 const NumberOfEvents = () => {
-    const [numberOfEvents, setNumberOfEvents] = useState('32');
+    const [numberOfEvents, setNumberOfEvents] = useState(32);
     const [errorMessage, setErrorMessage] = useState('');
 
     const handleChange = (event) => {
-        let value = parseInt(event.target.value);
+        let value = parseInt(event.target.value) | '';
         if (isNaN(value) || value <= 0) {
             setErrorMessage("Please enter a valid positive number 1-32.");
-            setNumberOfEvents(32);
+            setNumberOfEvents(32)
         } else if (value > 32) {
             setErrorMessage("The maximum number of events is 32.");
-            value = 32;
+            value = '32';
+            setNumberOfEvents(32)
         } else {
             setErrorMessage('');
         }
