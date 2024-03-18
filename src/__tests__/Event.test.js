@@ -23,21 +23,29 @@ describe('<Event /> component', () => {
     });
 
     test('renders event details button with the "Show Details"', () => {
-        const eventLocation = EventComponent.queryByText('Show Details');
-        expect(eventLocation).toBeInTheDocument();
+        const eventDetails = EventComponent.queryByText('Show Details');
+        expect(eventDetails).toBeInTheDocument();
     });
 
     test('by default event details section should be hidden', () => {
-        
+        const details = EventComponent.container.querySelector(".eventdetails");
+        expect(details).not.toBeInTheDocument();
     })
 
     test('shows details section when the user clicks "Show Details" button', async() => {
         const user = userEvent.setup();
+        const eventDetails = EventComponent.queryByText('Show Details');
 
+        await user.click(EventComponent.container.querySelector(".showdetails"));
+        expect(eventDetails).toBeInTheDocument();
     })
 
     test('hides details section when the user clicks "Hide Details" button', async() => {
         const user = userEvent.setup();
+        const eventDetails = EventComponent.queryByText('Hide Details');
+
+        await user.click(EventComponent.container.querySelector(".showdetails"));
+        expect(eventDetails).not.toBeInTheDocument();
     })
 
     test('renders event start date', async () => {

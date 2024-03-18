@@ -10,7 +10,7 @@ const Event = ({ event }) => {
             <p className='eventdate'>Date: {date.split('T')[0]}</p>
             <p className='eventtime'>Time: {date.split('T')[1]}</p>
             <p>{event.location}</p>
-            <button onClick={() => setDetailsVisible(!detailsVisible)}>
+            <button className='showdetails' onClick={() => setDetailsVisible(!detailsVisible)}>
                 {detailsVisible ? 'Hide Details' : 'Show Details'}
             </button>
             {detailsVisible && (

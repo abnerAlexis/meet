@@ -9,14 +9,15 @@ describe('<App /> component', () => {
     })
 
     test('renders a list of events', () => {
-        validateElementInDocument('#event-list');
+        expect(AppDOM.querySelector('#event-list')).toBeInTheDocument();
     });
 
     test('render CitySearch', () => {
-        validateElementInDocument('#city-search');
+        expect(AppDOM.querySelector('#city-search')).toBeInTheDocument();
     });
 
-    const validateElementInDocument = (locator) => {
-        expect(AppDOM.querySelector(locator)).toBeInTheDocument();
-    }
+    test('renders NumberOfEvents', () => {
+        let numberOfEvents = AppDOM.querySelector('#number-of-events');
+        expect(numberOfEvents).toBeInTheDocument();
+    });
 });
