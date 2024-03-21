@@ -12,6 +12,7 @@ import mockData from "./mock-data";
 export const extractLocations = (events) => {
     const extractedLocations = events.map((event) => event.location);
     const locations = [...new Set(extractedLocations)];
+    // console.log(locations);
     return locations;
 };
 
@@ -20,5 +21,6 @@ export const extractLocations = (events) => {
  * This function will fetch the list of all events
  */
 export const getEvents = async () => {
+    // console.log(mockData)
     return mockData;
 }
