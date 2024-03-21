@@ -89,5 +89,5 @@ describe('<CitySearch /> integration', () => {
         // console.log("suggested items length: " + suggestionListItems.length);
         // console.log("allLocations items length: " + allLocations.length);
         expect(suggestionListItems.length).toBe(allLocations.length + 1);
-    })
-})
+    });
+});
