@@ -87,7 +87,6 @@ export const getAccessToken = async () => {
         }
         return code && getToken(code);
     }
+    console.log("Access Token:" + accessToken);
     return accessToken;
 };
-
-console.log("Access Token:" + getAccessToken());
