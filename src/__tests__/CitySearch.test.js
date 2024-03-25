@@ -9,7 +9,11 @@ describe('<CitySearch /> component', () => {
     let suggestionList;
 
     beforeEach(() => {
-        CitySearchComponent = render(<CitySearch allLocations={[]}/>);
+        CitySearchComponent = render(
+            <CitySearch 
+                allLocations={[]}
+            />
+        );
     })
 
     test('renders text input', () => {
@@ -63,7 +67,6 @@ describe('<CitySearch /> component', () => {
             allLocations={allLocations} 
             setCurrentCity={() => { }} 
         />);
-        // console.log("All Events: " + JSON.stringify(allEvents));
         const cityTextBox = CitySearchComponent.queryByRole('textbox');
         await user.type(cityTextBox, "Berlin");
 
@@ -89,8 +92,6 @@ describe('<CitySearch /> integration', () => {
         const allLocations = extractLocations(allEvents);
 
         const suggestionListItems = within(CitySearchDOM).queryAllByRole('listitem');
-        // console.log("suggested items length: " + suggestionListItems.length);
-        // console.log("allLocations items length: " + allLocations.length);
         expect(suggestionListItems.length).toBe(allLocations.length + 1);
     });
 });
