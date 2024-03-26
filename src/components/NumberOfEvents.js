@@ -1,6 +1,4 @@
 import React from 'react';
-import { fetchData } from "../App"
-
 
 const NumberOfEvents = ({setCrntNOE, setErrorMsg}) => {
     const handleChange = (event) => {

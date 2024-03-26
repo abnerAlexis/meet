@@ -27,8 +27,8 @@ const App = () => {
   }, [currentCity, currentNOE]);
 
   return (
-    <div className="App">
-      <h2>Meet App</h2>
+    <div className="App event-body">
+      <h1>Meet App</h1>
       <CitySearch 
         allLocations={allLocations} 
         setCurrentCity={setCurrentCity} 
