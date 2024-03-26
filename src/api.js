@@ -78,16 +78,15 @@ export const getAccessToken = async () => {
         localStorage.removeItem("access_token");
         const searchParams = new URLSearchParams(window.location.search);
         const code = searchParams.get("code");
-    if (!code) {
+        if (!code) {
             const response = await fetch(
                 "https://vdeytmzi3m.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url"
             );
             const result = await response.json();
-            const { authUrl } = result;
-            return (window.location.href = authUrl);
-        }
-        return code && getToken(code);
+      const { authUrl } = result;
+      return (window.location.href = authUrl);
     }
-    // console.log("Access Token:" + accessToken); √
-    return accessToken;
+    return code && getToken(code);
+  }
+  return accessToken;
 };
