@@ -1,35 +1,34 @@
-import React, { useState } from "react";
+import React from 'react';
 
-const NumberOfEvents = () => {
-    const [numberOfEvents, setNumberOfEvents] = useState(32);
-    const [errorMessage, setErrorMessage] = useState('');
-
+const NumberOfEvents = ({setCrntNOE, setErrorMsg}) => {
     const handleChange = (event) => {
-        let value = parseInt(event.target.value) | '';
-        if (isNaN(value) || value <= 0) {
-            setErrorMessage("Please enter a valid positive number 1-32.");
-            setNumberOfEvents(32)
-        } else if (value > 32) {
-            setErrorMessage("The maximum number of events is 32.");
-            value = '32';
-            setNumberOfEvents(32)
-        } else {
-            setErrorMessage('');
+        let value = parseInt(event.target.value);
+
+        let errorMessage;
+        
+        if (!value || isNaN(value) || value <= 0 || value > 32) {
+            errorMessage = "Please enter a valid number, greater than 0 and less than 33";
+
+            setErrorMsg(errorMessage);
+            setCrntNOE(32);
+        } else {   
+            setErrorMsg("");         
+            setCrntNOE(value);
         }
-        setNumberOfEvents(value);
-    }
+    };
 
     return (
         <div id="number-of-events">
-            <label htmlFor="numberofevents">Number of Events: </label>
+            <label htmlFor="noe">Number of Events: </label>
             <input 
-                id="numberofevents"
-                type="number" // Use type number for numerical input
+                id="noe"
+                type="number"
+                defaultValue={32}
+                min={'1'}
+                max={'32'}
                 role="numberofevents"
-                value={numberOfEvents}
-                onChange={handleChange}
+                onChange={handleChange}            
             />
-            {errorMessage && <div style={{color: 'red'}}>{errorMessage}</div>}
         </div>
     );
 };

@@ -1,13 +1,17 @@
 import { render } from "@testing-library/react";
-import user from "@testing-library/user-event";
+import userEvent from "@testing-library/user-event";
 import NumberOfEvents from "../components/NumberOfEvents";
 
 describe('<NumberOfEvents /> component', () => {
     let NumberOfEventsComponent;
-
     beforeEach(() => {
-        NumberOfEventsComponent = render(<NumberOfEvents />)
-    })
+        NumberOfEventsComponent = render(
+            <NumberOfEvents 
+                setCrntNOE={() => {}} 
+                setErrorMsg={() => {}} 
+            />
+          );
+    });    
 
     test('renders textBox', () => {
         const textBox = NumberOfEventsComponent.queryByRole('numberofevents'); 
@@ -20,14 +24,9 @@ describe('<NumberOfEvents /> component', () => {
     });
 
     test('renders number of events that is entered by user', async () => {
+        const user = userEvent.setup();
         const textBox = NumberOfEventsComponent.queryByRole('numberofevents');
         await user.type(textBox, '{backspace}{backspace}10');
         expect(await textBox.value).toBe('10');
-    });
-
-    test('renders number of events that is entered by user', async () => {
-        const textBox = NumberOfEventsComponent.queryByRole('numberofevents');
-        await user.type(textBox, '{backspace}{backspace}50');
-        expect(await textBox.value).toBe('32');
     });
 });

@@ -51,4 +51,18 @@ describe('<App /> integration', () => {
         });
         
       });
+
+      test('renders list of events in number entered by the user', async () => {
+        const user = userEvent.setup();
+        const AppComponent = render(<App />);
+        const AppDOM = AppComponent.container.firstChild;
+        const NumberOfEventsDOM = AppDOM.querySelector('#number-of-events');
+        const valueOfNOE = within(NumberOfEventsDOM).queryByRole('numberofevents');
+
+        await user.type(valueOfNOE, '{backspace}{backspace}5');
+
+        const EventListDOM = AppDOM.querySelector('#event-list');
+        const allRenderedEventItems = within(EventListDOM).queryAllByRole('listitem');
+        expect(allRenderedEventItems.length).toBe(5); 
+      })
 });
