@@ -41,6 +41,7 @@ code {
 #event-list,
 .suggestions {
   list-style-type: none;
+  text-align: left;
 }
 
 #city-search {
