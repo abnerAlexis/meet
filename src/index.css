@@ -41,6 +41,11 @@ code {
 #event-list,
 .suggestions {
   list-style-type: none;
+}
+
+.suggestions {
+  width: 27%;
+  margin: 0 auto;
   text-align: left;
 }
 
