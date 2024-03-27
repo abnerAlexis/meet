@@ -5,7 +5,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
+}
+
+.app-title {
+  margin-top: 50px;
+  margin-bottom: 40px;
 }
 
 code {
@@ -24,11 +29,7 @@ code {
   background-color: rgb(243, 249, 252);
   border: 1px solid rgb(3, 3, 3);
   margin-bottom: 5px;
-  margin-right: 35px;  
-}
-
-.eventtitle {
-  font-size: 28px;
+  margin-right: 35px;
 }
 
 .event {
@@ -38,15 +39,33 @@ code {
   padding-bottom: 60px;
 }
 
+#noe {
+  height: 25px;
+  font-size: 16px;
+}
+
+.noe-label {
+  font-weight: 600;
+  font-size: 18px;
+}
+
 #event-list,
 .suggestions {
+  clear: both;
   list-style-type: none;
+}
+
+#number-of-events {
+  float: right;
+  margin-bottom: 10px;
+  width: 32%;
 }
 
 .suggestions {
   width: 27%;
   margin: 0 auto;
   text-align: left;
+  margin-top: 10px;
 }
 
 #city-search {
@@ -56,9 +75,10 @@ code {
 .city {
   height: 25px;
   width: 200px;
+  text-align: center;
 }
 
-.showdetails{
+.showdetails {
   float: right;
   height: 30px;
   font-size: 14px;
@@ -66,13 +86,14 @@ code {
   margin-right: 25px;
   background-color: rgb(3, 29, 59);
   border-radius: 15%;
-  color:rgb(243, 249, 252)
+  color: rgb(243, 249, 252)
 }
 
 .eventdetails {
   text-align: left;
-  margin-right: 5px;
+  padding-top: 40px;
   font-size: 14x;
+  font-size: 18px;
 }
 
 .city {

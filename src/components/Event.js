@@ -15,7 +15,7 @@ const Event = ({ event }) => {
                     {detailsVisible ? 'Hide Details' : 'Show Details'}
                 </button>
                 {detailsVisible && (
-                    <div className='eventdetails'>
+                    <div className='eventdetails' style={{ marginBottom: '-10px' }}>
                         <h2>Event Details</h2>
                         <p>{event.description}</p>
                     </div>

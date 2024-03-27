@@ -86,26 +86,26 @@ module.exports.getCalendarEvents = async (event) => {
       (error, response) => {
         if (error) {
           reject(error);
-        }else {
+        } else {
           resolve(response);
         }
       }
     );
   })
-  .then((results) => {
-    return {
-      statusCode: 200,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Credentials': true,
-      },
-      body: JSON.stringify({events: results.data.items}),
-    };
-  })
-  .catch((error) => {
-    return {
-      statusCode: 500,
-      body: JSON.stringify(error),
-    };
-  });
+    .then((results) => {
+      return {
+        statusCode: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true,
+        },
+        body: JSON.stringify({ events: results.data.items }),
+      };
+    })
+    .catch((error) => {
+      return {
+        statusCode: 500,
+        body: JSON.stringify(error),
+      };
+    });
 };

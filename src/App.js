@@ -15,8 +15,8 @@ const App = () => {
 
   const fetchData = async () => {
     const allEvents = await getEvents();
-    const filteredEvents = currentCity === "See all cities" 
-      ? allEvents 
+    const filteredEvents = currentCity === "See all cities"
+      ? allEvents
       : allEvents.filter(event => event.location === currentCity)
     setEvents(filteredEvents.slice(0, currentNOE));
     setAllLocations(extractLocations(allEvents));
@@ -28,16 +28,16 @@ const App = () => {
 
   return (
     <div className="App event-body">
-      <h1>Meet App</h1>
-      <CitySearch 
-        allLocations={allLocations} 
-        setCurrentCity={setCurrentCity} 
+      <h1 className='app-title'>Meet App</h1>
+      <CitySearch
+        allLocations={allLocations}
+        setCurrentCity={setCurrentCity}
       />
       <div className='message-box'>
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
       </div>
-      
-      <NumberOfEvents 
+
+      <NumberOfEvents
         setCrntNOE={setCurrentNOE}
         setErrorMsg={setErrorMessage}
       />

@@ -63,13 +63,13 @@ export const getAccessToken = async () => {
                 "https://vdeytmzi3m.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url"
             );
             const result = await response.json();
-      const { authUrl } = result;
-      return (window.location.href = authUrl);
+            const { authUrl } = result;
+            return (window.location.href = authUrl);
+        }
+        console.log("Code: " + code);
+        return code && getToken(code);
     }
-    console.log("Code: " + code);
-    return code && getToken(code);
-  }
-  return accessToken;
+    return accessToken;
 };
 
 const checkToken = async (accessToken) => {

@@ -1,33 +1,33 @@
 import React from 'react';
 
-const NumberOfEvents = ({setCrntNOE, setErrorMsg}) => {
+const NumberOfEvents = ({ setCrntNOE, setErrorMsg }) => {
     const handleChange = (event) => {
         let value = parseInt(event.target.value);
 
         let errorMessage;
-        
+
         if (!value || isNaN(value) || value <= 0 || value > 32) {
             errorMessage = "Please enter a valid number, greater than 0 and less than 33";
 
             setErrorMsg(errorMessage);
             setCrntNOE(32);
-        } else {   
-            setErrorMsg("");         
+        } else {
+            setErrorMsg("");
             setCrntNOE(value);
         }
     };
 
     return (
         <div id="number-of-events">
-            <label htmlFor="noe">Number of Events: </label>
-            <input 
+            <label className='noe-label' htmlFor="noe">Number of Events: </label>
+            <input
                 id="noe"
                 type="number"
                 defaultValue={32}
                 min={'1'}
                 max={'32'}
                 role="numberofevents"
-                onChange={handleChange}            
+                onChange={handleChange}
             />
         </div>
     );
