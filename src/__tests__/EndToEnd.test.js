@@ -1,4 +1,4 @@
-import { default as puppeteer } from "puppeteer";
+import puppeteer from 'puppeteer';
 
 describe('show/hide an event details', async () => {
     const browser = await puppeteer.launch();
