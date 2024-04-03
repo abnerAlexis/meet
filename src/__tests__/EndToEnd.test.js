@@ -7,14 +7,9 @@ describe('show/hide an event details', () => {
     beforeAll(async () => {
         browser = await puppeteer.launch();
         page = await browser.newPage();
-        await page.goto('http://localhost:3000/');
+        await page.goto('http://localhost:3000/meet');
         await page.waitForSelector('.event');
     });
-
-    // Give time to any async operation to complete after each test
-  afterEach(async () => {
-    jest.setTimeout(20000);
-  });
 
     afterAll(async () => {
         await browser.close();
@@ -25,17 +20,3 @@ describe('show/hide an event details', () => {
         expect(eventDetails).toBeNull();
     })
 });
-
-// describe('show/hide an event details', async () => {
-//     const browser = await puppeteer.launch();
-
-//     const page = await browser.newPage();
-//     await page.goto('http://localhost:3000/');
-
-//     await page.waitForSelector('.event');
-
-//     const eventDetails = await page.$('eventdetails');
-
-//     expect(eventDetails).toBeNull();
-//     browser.close();
-// });

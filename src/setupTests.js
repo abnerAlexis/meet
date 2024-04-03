@@ -16,7 +16,7 @@ function suppressConsoleMessages(method) {
         originalMethod(...args);
     };
 }
-
+jest.setTimeout(30000);
 suppressConsoleMessages('error');
 suppressConsoleMessages('warn');
 //Clear and simplified version of below code.
