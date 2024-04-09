@@ -4,16 +4,17 @@ import EventList from './components/EventList';
 import NumberOfEvents from './components/NumberOfEvents';
 import { getEvents, extractLocations } from './api';
 import { InfoAlert } from './components/Alert';
+import { ErrorAlert } from './components/Alert';
 import './App.css';
 
 
 const App = () => {
   const [allLocations, setAllLocations] = useState([]);
   const [currentNOE, setCurrentNOE] = useState(32);
-  const [errorMessage, setErrorMessage] = useState("");
   const [events, setEvents] = useState([]);
   const [currentCity, setCurrentCity] = useState("See all cities");
   const [infoAlert, setInfoAlert] = useState("");
+  const [errorAlert, setErrorAlert] = useState("");
 
   const fetchData = async () => {
     const allEvents = await getEvents();
@@ -33,6 +34,14 @@ const App = () => {
       <h1 className='app-title'>Meet App</h1>
       <div className='alerts-container'>
         {
+          errorAlert.length ?
+            <ErrorAlert text={errorAlert}/> :
+            null
+        }
+      </div>
+
+      <div className='alerts-container'>
+        {
           infoAlert.length ?
             <InfoAlert text={infoAlert}/> :
             null
@@ -43,13 +52,10 @@ const App = () => {
         setCurrentCity={setCurrentCity}
         setInfoAlert={setInfoAlert}
       />
-      <div className='message-box'>
-        {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-      </div>
 
       <NumberOfEvents
         setCrntNOE={setCurrentNOE}
-        setErrorMsg={setErrorMessage}
+        setErrorAlert={setErrorAlert}
       />
       <EventList events={events} />
     </div>

@@ -8,7 +8,7 @@ describe('<NumberOfEvents /> component', () => {
         NumberOfEventsComponent = render(
             <NumberOfEvents 
                 setCrntNOE={() => {}} 
-                setErrorMsg={() => {}} 
+                setErrorAlert={() => {}} 
             />
           );
     });    
