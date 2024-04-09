@@ -3,6 +3,7 @@ import CitySearch from './components/CitySearch';
 import EventList from './components/EventList';
 import NumberOfEvents from './components/NumberOfEvents';
 import { getEvents, extractLocations } from './api';
+import { InfoAlert } from './components/Alert';
 import './App.css';
 
 
@@ -12,6 +13,7 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [events, setEvents] = useState([]);
   const [currentCity, setCurrentCity] = useState("See all cities");
+  const [infoAlert, setInfoAlert] = useState("");
 
   const fetchData = async () => {
     const allEvents = await getEvents();
@@ -29,9 +31,17 @@ const App = () => {
   return (
     <div className="App event-body">
       <h1 className='app-title'>Meet App</h1>
+      <div className='alerts-container'>
+        {
+          infoAlert.length ?
+            <InfoAlert text={infoAlert}/> :
+            null
+        }
+      </div>
       <CitySearch
         allLocations={allLocations}
         setCurrentCity={setCurrentCity}
+        setInfoAlert={setInfoAlert}
       />
       <div className='message-box'>
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
