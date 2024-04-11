@@ -27,11 +27,11 @@ const App = () => {
 
   useEffect(() => {
     if (navigator.onLine) {
-      warningAlert = "";
+      setWarningAlert = "";
     } else {
-      warningAlert = "You are using the app offline.";
+      setWarningAlert = "You are using the app offline.";
     }
-    
+
     fetchData();
   }, [currentCity, currentNOE]);
 
@@ -42,6 +42,14 @@ const App = () => {
         {
           errorAlert.length ?
             <ErrorAlert text={errorAlert}/> :
+            null
+        }
+      </div>
+
+      <div className='alerts-container'>
+        {
+          warningAlert.length ?
+            <WarningAlert text={warningAlert}/> :
             null
         }
       </div>
