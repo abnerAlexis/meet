@@ -27,9 +27,9 @@ const App = () => {
 
   useEffect(() => {
     if (navigator.onLine) {
-      setWarningAlert = "";
+      setWarningAlert("");
     } else {
-      setWarningAlert = "You are using the app offline.";
+      setWarningAlert("The application is currently offline.");
     }
 
     fetchData();
