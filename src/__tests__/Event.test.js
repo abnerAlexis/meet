@@ -17,6 +17,13 @@ describe('<Event /> component', () => {
         expect(eventTitle).toBeInTheDocument();
     });
 
+    test('renders event location', () => {
+        const eventLocation = EventComponent.container.getElementsByClassName('eventlocation')[0];
+        expect(eventLocation).toBeInTheDocument();
+    });
+    
+    
+
     test('renders event details button with the "Show Details"', () => {
         const eventDetails = EventComponent.queryByText('Show Details');
         expect(eventDetails).toBeInTheDocument();
