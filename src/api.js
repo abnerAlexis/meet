@@ -26,6 +26,14 @@ export const getEvents = async () => {
         return mockData;
     }
 
+    if (!navigator.onLine) {
+        const events = localStorage.getItem("lastEvents");
+        NProgress.done();
+        return events ?
+            JSON.parse(events) :
+            [];
+    }
+
     const token = await getAccessToken();
 
     if (token) {
