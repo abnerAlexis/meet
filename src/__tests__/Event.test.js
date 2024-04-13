@@ -20,9 +20,7 @@ describe('<Event /> component', () => {
     test('renders event location', () => {
         const eventLocation = EventComponent.container.getElementsByClassName('eventlocation')[0];
         expect(eventLocation).toBeInTheDocument();
-    });
-    
-    
+    });    
 
     test('renders event details button with the "Show Details"', () => {
         const eventDetails = EventComponent.queryByText('Show Details');
@@ -48,18 +46,13 @@ describe('<Event /> component', () => {
 
         await user.click(EventComponent.container.querySelector(".showdetails"));
         expect(eventDetails).not.toBeInTheDocument();
-    })
+    });  
 
-    test('renders event start date', async () => {
-        const eventDate = allEvents[0].created.split('T')[0];
-        const renderedDate = EventComponent.container.querySelector('.eventdate');
-        expect((renderedDate.textContent)).toEqual("Date: " + eventDate);
-    });
-
-    test('renders event start time', async () => {
-        const eventTime = allEvents[0].created.split('T')[1];
-        const renderedTime = EventComponent.container.querySelector('.eventtime');
-        expect(renderedTime.textContent).toEqual("Time: " + eventTime);
+    test('renders event time in UTC format', () => {
+        const renderedTime = EventComponent.container.querySelector('.eventtime').textContent.trim();
+        const receivedTime = renderedTime.split(', ')[1];
+        const expectedTime = new Date(allEvents[0].created).toUTCString().split(', ')[1];
+        expect(receivedTime).toEqual(expectedTime);
     });
     
 })
