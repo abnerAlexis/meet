@@ -1,8 +1,7 @@
-import React, { PureComponent, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     PieChart,
     Pie,
-    Sector,
     Cell,
     ResponsiveContainer
 } from 'recharts';
@@ -10,11 +9,12 @@ import {
 const EventGenresChart = ({ events }) => {
     const [data, setData] = useState([]);
     const genres = [
-        'React', 
-        'JavaScript', 
-        'Node', 
-        'jQuery', 
-        'Angular',];
+        'React',
+        'JavaScript',
+        'Node',
+        'jQuery',
+        'Angular',
+    ];
     const COLORS = [
         "#FF6384",
         "#36A2EB",
