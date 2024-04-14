@@ -9,8 +9,19 @@ import {
 
 const EventGenresChart = ({ events }) => {
     const [data, setData] = useState([]);
-    const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'Angular'];
-    const COLORS = ['#B74AFA', '#F67A53', '#53F6E2', '#16F516'];
+    const genres = [
+        'React', 
+        'JavaScript', 
+        'Node', 
+        'jQuery', 
+        'Angular',];
+    const COLORS = [
+        "#FF6384",
+        "#36A2EB",
+        "#FFCE56",
+        "#4BC0C0",
+        "#9966FF",
+    ];
 
     const getData = () => {
         const data = genres.map(genre => {
