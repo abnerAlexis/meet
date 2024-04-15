@@ -43,7 +43,7 @@ const App = () => {
       <div className='alerts-container'>
         {
           errorAlert.length ?
-            <ErrorAlert text={errorAlert}/> :
+            <ErrorAlert text={errorAlert} /> :
             null
         }
       </div>
@@ -51,7 +51,7 @@ const App = () => {
       <div className='alerts-container'>
         {
           warningAlert.length ?
-            <WarningAlert text={warningAlert}/> :
+            <WarningAlert text={warningAlert} /> :
             null
         }
       </div>
@@ -59,7 +59,7 @@ const App = () => {
       <div className='alerts-container'>
         {
           infoAlert.length ?
-            <InfoAlert text={infoAlert}/> :
+            <InfoAlert text={infoAlert} /> :
             null
         }
       </div>
@@ -75,9 +75,9 @@ const App = () => {
       />
       <div className='charts-container'>
         <EventGenresChart events={events} />
-        <CityEventsChart 
-          allLocations={ allLocations }
-          events={ events }
+        <CityEventsChart
+          allLocations={allLocations}
+          events={events}
         />
       </div>
       <EventList events={events} />

@@ -34,7 +34,7 @@ defineFeature(feature, test => {
 
     test('Change Number of Displayed Events', ({ given, when, then }) => {
         given('the user is viewing events', async () => {
-            AppComponent =render(<App />);
+            AppComponent = render(<App />);
             AppDOM = AppComponent.container.firstChild;  //console.log(AppComponent);
             const EventListDOM = AppDOM.querySelector('#event-list');
             await waitFor(() => {
@@ -47,12 +47,12 @@ defineFeature(feature, test => {
             const input = AppDOM.querySelector('#noe');
             const user = userEvent.setup();
             await user.type(input, '{backspace}{backspace}10');
-        });   
+        });
 
         then('the displayed number of events should update accordingly', async () => {
             AppDOM = AppComponent.container.firstChild;
             const EventListItems = within(AppDOM).queryAllByRole('listitem');
-            expect(EventListItems.length).toBe(10); 
+            expect(EventListItems.length).toBe(10);
         });
     });
 });

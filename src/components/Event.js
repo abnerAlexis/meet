@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 const Event = ({ event }) => {
     const [detailsVisible, setDetailsVisible] = useState(false);
     const date = new Date(event.created);
-    
-   
+
+
 
     return (
         <div className='eventcontainer'>

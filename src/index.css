@@ -145,12 +145,15 @@ body {
   .app-title {
     font-size: 16px;
   }
+
   .city {
     width: 50%;
   }
+
   .showdetails {
     height: 25px;
   }
+
   #noe,
   .noe-label {
     font-size: 14px;
@@ -161,15 +164,18 @@ body {
   .city {
     width: 40%;
   }
+
   .app-title {
     font-size: 14px;
   }
+
   #noe,
   .noe-label {
     font-size: 12px;
   }
+
   .showdetails {
     height: 15px;
-    font-size: 7.5px; 
+    font-size: 7.5px;
   }
 }

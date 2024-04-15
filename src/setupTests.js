@@ -1,20 +1,20 @@
 import '@testing-library/jest-dom';
 
 const MESSAGES_TO_IGNORE = [
-    "An update to",
-    "inside a test was not wrapped in act"
+  "An update to",
+  "inside a test was not wrapped in act"
 ];
 
 function suppressConsoleMessages(method) {
-    const originalMethod = console[method].bind(console);
-    console[method] = (...args) => {
-        for (const arg of args) {
-            if (typeof arg === 'string' && MESSAGES_TO_IGNORE.some(message => arg.includes(message))) {
-                return;
-            }
-        }
-        originalMethod(...args);
-    };
+  const originalMethod = console[method].bind(console);
+  console[method] = (...args) => {
+    for (const arg of args) {
+      if (typeof arg === 'string' && MESSAGES_TO_IGNORE.some(message => arg.includes(message))) {
+        return;
+      }
+    }
+    originalMethod(...args);
+  };
 }
 jest.setTimeout(30000);
 suppressConsoleMessages('error');
