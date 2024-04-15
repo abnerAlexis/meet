@@ -3,7 +3,8 @@ import {
     PieChart,
     Pie,
     Cell,
-    ResponsiveContainer
+    ResponsiveContainer,
+    Legend
 } from 'recharts';
 
 const EventGenresChart = ({ events }) => {
@@ -74,6 +75,7 @@ const EventGenresChart = ({ events }) => {
                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                 </Pie>
+                <Legend verticalAlign="top" height={36}/>
             </PieChart>
         </ResponsiveContainer>
     );
