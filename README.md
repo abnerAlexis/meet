@@ -1,3 +1,11 @@
+![alt text](meetscrsh.png)
+# [🔗 Meet App](https://abneralexis.github.io/meet/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-blue?logo=github)](https://github.com/abnerAlexis/meet)
+
+[![Project Website](https://img.shields.io/badge/Project-Website-green?logo=google-chrome)](https://abneralexis.github.io/meet/)
+
+
+
 ## USER STORIES
 ### 1. Filter Events By City
 
@@ -98,11 +106,10 @@ So that I can quickly grasp trends, patterns, or statistics related to event.
   <strong>When</strong> the user selects the option to view a chart<br>
   <strong>Then</strong> a chart representing relevant event details should be displayed
 
-### Using Serverless Functions
-  Logic for using serverless functions will be implemented. These functions will handle obtaining access tokens for interacting with the Google Calendar API. 
-  
-  The OAuth process involves obtaining a consumer key and secret to authenticate the serverless function. 
-  
-  When a user grants consent, an access token is generated, allowing the app to fetch and display calendar events. 
-  
-  This token is sent with each request, verifying the user's identity to the API.
+###  🖥️ Technology Used
+* React 
+* TDD technique
+* Serverless functions
+* Google Calendar API 
+* OAuth2 authentication flow 
+* Github Pages
